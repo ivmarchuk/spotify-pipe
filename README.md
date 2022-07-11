@@ -18,4 +18,4 @@ which in the intermediate result gives a pandas dataframe with cleaned up data.
 Then the database connection is established [In this case a local MySQL database is used]. 
 Then - loaded into the database.
 
-In airflow file basic exmaple of defining dags is presented. 
+In schedule.py file basic exmaple of defining dags is presented. 
