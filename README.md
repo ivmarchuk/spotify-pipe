@@ -27,6 +27,7 @@ The problem that the token disappears quite quickly - its relevance time is only
   - Using a refresh_token, which is provided by the spotify itself. 
 
 To start with, I created a project here[https://developer.spotify.com/dashboard/applications]
+
 Where I could generate **CLIENT_ID, SCOPE, and REDIRECT_URI**. 
 To get a long term token, run the following command 
 ``` Linux
@@ -36,7 +37,7 @@ curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=autho
 This resulted in a json file with the required information
 ```json
 {
-    "access_token": token1",
+    "access_token": "token1",
     "token_type": "Bearer",
     "expires_in": 3600,
     "refresh_token": "token2",
