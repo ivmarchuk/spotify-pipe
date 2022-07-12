@@ -32,7 +32,7 @@ To start with, I created a project [here](https://developer.spotify.com/dashboar
 There I could generate **CLIENT_ID, SCOPE, and REDIRECT_URI**. 
 To get a long term token, run the following command 
 ``` console
-curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=authorization_code -d code=$CODE -d redirect_uri=$REDIRECT_URI https://accounts.spotify.com/api/token
+curl -d client_id=CLIENT_ID -d client_secret=CLIENT_SECRET -d grant_type=authorization_code -d code=CODE -d redirect_uri=REDIRECT_URI https://accounts.spotify.com/api/token
 ```
 
 This resulted in a json file with the required information
