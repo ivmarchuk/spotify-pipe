@@ -22,4 +22,28 @@ I used the os library to replace direct values with environmental variables.
 
 Then - loaded into the database.
 
+The problem that the token disappears quite quickly - its relevance time is only 1 hour - can be solved in the following ways. 
+  - Manual update before starting the pipe
+  - Using a refresh_token, which is provided by the spotify itself. 
+
+To start with, I created a project here[https://developer.spotify.com/dashboard/applications]
+Where I could generate **CLIENT_ID, SCOPE, and REDIRECT_URI**. 
+To get a long term token, run the following command 
+``` cmd
+curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=authorization_code -d code=$CODE -d redirect_uri=$REDIRECT_URI https://accounts.spotify.com/api/token
+```
+
+This resulted in a json file with the required information
+```json
+{
+    "access_token": token1",
+    "token_type": "Bearer",
+    "expires_in": 3600,
+    "refresh_token": "token2",
+    "scope": "user-read-recently-played"
+}
+```
+
 In schedule.py file basic exmaple of defining dags is presented. 
+
+
