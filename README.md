@@ -30,7 +30,7 @@ The problem that the token disappears quite quickly - its relevance time is only
 To start with, I created a project [here](https://developer.spotify.com/dashboard/applications)
 
 There I could generate **CLIENT_ID, SCOPE, and REDIRECT_URI**. 
-To get a long term token, run the following command 
+To get a long term token, I ran the following command 
 ``` console
 curl -d client_id=CLIENT_ID -d client_secret=CLIENT_SECRET -d grant_type=authorization_code -d code=CODE -d redirect_uri=REDIRECT_URI https://accounts.spotify.com/api/token
 ```
