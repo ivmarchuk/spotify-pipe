@@ -16,8 +16,10 @@ the resulting json file is parsed within the written function,
 which in the intermediate result gives a pandas dataframe with cleaned up data. 
 
 Then the database connection is established [In this case MySQL is used]. 
+
 In order to secure my code, and not to use the password and username of the database directly, 
 I used the os library to replace direct values with environmental variables.
+
 Then - loaded into the database.
 
 In schedule.py file basic exmaple of defining dags is presented. 
