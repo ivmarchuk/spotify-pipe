@@ -4,7 +4,10 @@ import mysql.connector
 from mysql.connector import Error
 import pandas as pd
 from sqlalchemy import create_engine
+import os 
 
+db_user = os.environ.get('db_user')
+db_pass = os.environ.get('db_pass')
 
 
 def check_data(df: pd.DataFrame) -> bool:
@@ -94,8 +97,8 @@ def etl_main():
     try: 
         connection = mysql.connector.connect(host = 'HOST',
                                             database = 'DB-NAME',
-                                            user = 'USERNAME',
-                                            password = 'PASSWORD')
+                                            user = db_user,
+                                            password = db_pass)
         
         if connection.is_connected():
             db_info = connection.get_server_info()
@@ -108,10 +111,10 @@ def etl_main():
             record = cursor.fetchone()
             print('Database: ', record)
             
-            engine = create_engine("mysql+pymysql://{user}:{pw}@localhost/{db}"
+            engine = create_engine("mysql+pymysql://{user}:{password}@localhost/{database}"
                         .format(user="USERNAME",
-                                pw="PASSWORD",
-                                db="DB_NAME"))
+                                password= db_pass,
+                                database= db_user))
             
             cursor = connection.cursor()
             print('Cursor was created successfuly')
