@@ -1,4 +1,5 @@
-# spotify-pipe
+### spotify-pipe
+*****
 This repository provides a general example of working with the API and Airflow using the Python. 
 
 The purpose of this ETL process is to get information about what songs the user has listened to on his account during a day. 
@@ -26,11 +27,11 @@ The problem that the token disappears quite quickly - its relevance time is only
   - Manual update before starting the pipe
   - Using a refresh_token, which is provided by the spotify itself. 
 
-To start with, I created a project here[https://developer.spotify.com/dashboard/applications]
+To start with, I created a project [here](https://developer.spotify.com/dashboard/applications)
 
-Where I could generate **CLIENT_ID, SCOPE, and REDIRECT_URI**. 
+There I could generate **CLIENT_ID, SCOPE, and REDIRECT_URI**. 
 To get a long term token, run the following command 
-``` Linux
+``` console
 curl -d client_id=$CLIENT_ID -d client_secret=$CLIENT_SECRET -d grant_type=authorization_code -d code=$CODE -d redirect_uri=$REDIRECT_URI https://accounts.spotify.com/api/token
 ```
 
