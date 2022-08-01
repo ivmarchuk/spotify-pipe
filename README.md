@@ -1,4 +1,4 @@
-### spotify-pipe
+### spotify-pipeline
 *****
 This repository provides a general example of working with the API and Airflow using the Python. 
 
